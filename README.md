@@ -1,2 +1,4 @@
-# carc
-Coastside Amateur Radio Club
+# Coastside Amateur Radio Club
+
+https://www.coastsidearc.org
+
