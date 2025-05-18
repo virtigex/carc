@@ -7,11 +7,10 @@ const int resolution = 1023;         // 10-bit ADC (0–1023)
 //
 // Voltage at middle tap is ~ 1/3 of input voltage.
 
-const float scale = 3.1;  // by experiment - theortically 3
+const float scale = 3.1;  // by experiment - theoretically 3
 
 void setup() {
   Serial.begin(9600);
-  //Serial.println("Time(ms),Voltage(V)");
 }
 
 void loop() {
