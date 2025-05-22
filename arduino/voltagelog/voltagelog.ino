@@ -8,10 +8,18 @@ const int resolution = 1023;         // 10-bit ADC (0–1023)
 // Voltage at middle tap is ~ 1/3 of input voltage.
 
 const float scale = 3.1;  // by experiment - theoretically 3
+const int TEST_PORT = 2;
+int state = 0;
 
 void setup() {
+  // Initialize digital pins 2 to 9 as outputs
+  pinMode(TEST_PORT, OUTPUT);
+
+  // Start serial communication at 9600 baud
   Serial.begin(9600);
+  digitalWrite(TEST_PORT, state);
 }
+
 
 void loop() {
   bool doreading = false;
@@ -31,4 +39,12 @@ void loop() {
     Serial.print(voltage, 3);
     Serial.println(" } }");
   }
+
+  if (state == 0) {
+    state = 1;
+  } else {
+    state = 0;
+  }
+  digitalWrite(TEST_PORT, state);
+  delay(500);
 }
